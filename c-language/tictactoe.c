@@ -21,22 +21,18 @@ int main(){
 	switch(p_pwn){      //it changes the computer piece accordingly
 	case 'o':           //will replace switch with if-else ladder
 		c_pwn='x';
-		printf("%c\n",c_pwn);
 		break;
 
 	case 'O':
 		c_pwn='x';
-		printf("%c\n",c_pwn);
 		break;
 
 	case 'x':
 		c_pwn='o';
-		printf("%c\n",c_pwn);
 		break;
 
 	case 'X':
 		c_pwn='o';
-		printf("%c\n",c_pwn);
 		break;
 
 	default:
@@ -80,7 +76,7 @@ void p_play(){
 	printf("Your move(enter coordinates):\t");
 	scanf("%d%d",&x,&y);
 
-	if(a[x][y]^p_pwn)  //xor is used it returns low when both are same thus you cannot give 2 inputs to the same cell
+	if(a[x][y]^p_pwn && a[x][y]!=c_pwn)  //xor is used it returns low when both are same thus you cannot give 2 inputs to the same cell
 		a[x][y]=p_pwn;
 	else{
 		printf("Invalid move\n");
